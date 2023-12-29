@@ -30,8 +30,11 @@ const Forms = () => {
     const errors={}
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     const re=/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/
+    const reg=/^[a-zA-Z]*$/
     if (!val.username) {
       errors.username = "Username is required!";
+    }else if(!reg.test(val.username)){
+      errors.username="Only alphabets allowed in username"
     }
     if (!val.email) {
       errors.email = "Email is required!";
